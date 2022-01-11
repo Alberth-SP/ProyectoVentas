@@ -2,11 +2,12 @@ import models from  '../models/models.js';
 
 // aqui definimos variables q contienen la logica que vamos a requerir en las rutas
 let add = async (req, res, next) => {
-    const { codigo, nombre } = req.body;
+    const { codigo, nombre, categoria } = req.body;
     try{
         const data = await models.Articulo.create({
             codigo,
-            nombre
+            nombre,
+            categoria
         })
         res.status(200).json(data);
 

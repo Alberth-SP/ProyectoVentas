@@ -1,6 +1,7 @@
 import mongoose  from 'mongoose';
 const { Schema , model } = mongoose;
 const ArticleSchema = new Schema ({
+    categoria: {type: Schema.ObjectId, ref: 'categoryschema' , required:true, default:null },
     codigo: { type: String , maxlength: 60, unique: true, require: true},
     nombre: { type: String , maxlength: 60, unique: true, require: true},
     descripcion: { type: String , maxlength: 255},
